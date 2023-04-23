@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Tangerine&family=Zen+Kaku+Gothic+New&display=swap");
+
+/* 
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Tangerine', cursive;
+font-family: 'Zen Kaku Gothic New', sans-serif;
+*/
+.sidenav {
+    padding: 20px;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    position: fixed;
+    /*  padding: 20px; */
+    background-color: #a6bb8d;
+    border-right: 2px solid #eae7b1;
+}
+
+.userinfo {
+    height: 100%;
+    color: #3c6255;
+    background-color: #a6bb8d;
+    width: 20%;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    top: 0px;
+    text-align: center;
+}
+/*     .titlebar{
+            position: fixed;
+            background-color: white;
+        } */
+
+.sidebar-heading {
+    margin-left: 10px;
+    color: gray;
+}
+.topbartitle {
+    margin-left: 220px;
+    padding: 2px;
+    font-size: 12px;
+    color: rgb(99, 99, 126);
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.wrapper {
+    position: relative;
+}
+
+main {
+}
+
+/* .topbar {
+    position: fixed;
+    z-index: 999;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    background-color: #698269;
+} */
+.navigations ul {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main_contents {
+    padding: 10px;
+}
+.navigations li {
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: rgb(51, 50, 50);
+    transition: ease-in 0.12s;
+}
+.navigations li:hover a i {
+    animation: swing 0.6s;
+}
+.navigations li:hover {
+    background-color: #61876e;
+}
+.navigations li a:focus {
+    color: #1c2122;
+}
+.navigations li:hover a {
+    color: white;
+}
+
+.navitems {
+    padding: 150px;
+}
+.navitems a {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    color: #3c6255;
+}
+
+/*  .navitems:hover a {
+            background-color: #283e46;
+            color: #c7d6da;
+
+        }
+ */
+
+#res {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    user-select: none;
+}
+
+#abtext {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    user-select: none;
+    color: #76aeee;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: rgb(233, 241, 247);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#canvas {
+    display: none;
+    color: rgb(78, 83, 90);
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 25px;
+    font-size: 20px;
+}
+#canvas:hover {
+    color: rgb(89, 107, 141);
+}
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        display: none;
+    }
+    .navigations ul {
+        display: block;
+        margin-top: 70%;
+    }
+    .userinfo {
+        padding: 20px;
+        display: block;
+    }
+
+    .topbartitle {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #canvas {
+        display: inline-block;
+    }
+
+    #canvasitems {
+        background-color: #a6bb8d;
+        margin-top: -29px;
+        padding-left: 40px;
+        z-index: 0;
+    }
+    .btn-close {
+        z-index: 1;
+    }
+    .userinfo #em {
+        position: absolute;
+        left: 115px;
+        top: 100px;
+    }
+}
+
+.dashboardbanner {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    color: rgb(189, 171, 171);
+    font-size: 36px;
+}
+
+.dashboardbanner:hover {
+    animation: swing 0.5s;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(10deg);
+    }
+
+    30% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    70% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

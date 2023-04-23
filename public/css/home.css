@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Tangerine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+    font-family: "Poppins", sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+
+#offcanvasRight {
+    background-color: rgb(70, 114, 172);
+    width: 60%;
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(114, 163, 196);
+
+    position: fixed;
+    z-index: 4;
+}
+#img1 {
+    position: absolute;
+    width: 500px;
+    border-bottom: 10px solid white;
+}
+#img3 {
+    position: absolute;
+    width: 450px;
+    top: 110px;
+    right: 18%;
+}
+
+nav .logo {
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+}
+
+nav .logo span {
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(236, 240, 243);
+}
+
+nav .title {
+    font-family: "Tangerine", cursive;
+    font-weight: bolder;
+    font-size: 70px;
+    transform: scale(1);
+    color: rgb(15, 100, 153);
+}
+
+nav .subtitle {
+    font-family: "Cookie", cursive;
+    text-transform: lowercase;
+    position: absolute;
+    top: 80px;
+    margin-left: -20px;
+    display: block;
+    width: 200px;
+}
+nav .tabs .menutabs {
+    /* list-style: none;
+    float: right;
+    margin-top: 10px;
+    margin-right: 50px; */
+    list-style: none;
+    display: flex;
+    margin: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .tabs .menutabs li {
+    padding: 10px;
+
+    /* display: inline-block;
+    margin: 18px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background 0.2s ease-in; */
+}
+
+.line {
+    width: 0;
+    transition: width 0.3s;
+    position: relative;
+}
+
+/* nav .tabs ul li:hover .line {
+    background-color: rgb(226, 224, 220);
+    width: 100%;
+    height: 2px;
+} */
+/* nav .tabs ul li:hover {
+    background-color: rgb(97, 154, 192);
+} */
+nav .tabs ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 20px;
+    transition: all ease-in-out 0.2s;
+}
+
+nav .tabs ul li:hover a {
+    background-color: rgb(151, 199, 253);
+    color: rgb(15, 100, 153);
+    padding: 10px;
+}
+
+.imgbanner {
+    margin-top: 120px;
+}
+
+.btns {
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
+.btns .btnbook {
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    margin: 2px;
+    background-color: rgb(55, 133, 87);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: all ease-in-out 0.2s;
+}
+.btns .btnbook:hover {
+    /* background-color: rgb(16, 59, 177);
+    color: white; */
+    transform: scaleX(1.05);
+}
+.btns .btninfo {
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    color: rgb(72, 106, 228);
+    font-weight: bold;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: all ease-in-out 0.2s;
+}
+#canvasbody {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#canvasbody ul {
+    list-style: none;
+}
+
+#canvasbody ul li {
+    padding: 20px;
+}
+
+#canvasbody ul li a {
+    text-decoration: none;
+    color: rgb(236, 236, 236);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#canvasbody ul li:hover {
+    background-color: rgb(23, 100, 151);
+}
+.banner {
+    height: 560px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
+    /*    background-image: url('../../public/img/home.jpeg');
+            background-position: center;
+            background-attachment: fixed; */
+}
+
+#logincard {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+}
+#footer {
+    font-size: 14px;
+    color: gray;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+
+@media screen and (min-width: 800px) {
+    #logincard {
+        position: absolute;
+        left: 15%;
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #bannerbg {
+        display: none;
+    }
+    #logincard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.banner h2 {
+    position: absolute;
+    top: 170px;
+    left: 10%;
+    color: rgb(8, 69, 109);
+    font-size: 40px;
+    font-weight: normal;
+    /* background-color: rgba(0, 0, 0, 0.123);
+ padding: 50px;
+ border-radius: 5px;
+ border-top-left-radius: 50%;
+ border-bottom-left-radius: 50%;
+ border-bottom-right-radius: 50%;
+ border-top-right-radius: 50%; */
+}
+
+.banner-2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(114, 163, 196);
+    z-index: 0;
+    /*    background-image: url('../../public/img/home.jpeg');
+  background-position: center;
+  background-attachment: fixed; */
+    border-bottom-left-radius: 50%;
+    border-bottom: 5px solid rgb(114, 163, 196);
+    border-bottom-right-radius: 90%;
+    border-bottom: 10px solid whitesmoke;
+}
+
+.banner h2 span {
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.banner-2 .auth {
+    position: absolute;
+    top: 150px;
+
+    width: 100%;
+    height: 100%;
+}
+.main {
+    margin-top: 140px;
+}
+.main-book {
+    padding-top: 100px;
+}
+.booknow {
+    position: absolute;
+    top: 180px;
+    right: 5%;
+    outline: none;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 30px;
+    border: 4px solid rgb(57, 85, 104);
+    font-weight: bold;
+    background-color: rgb(143, 184, 211);
+    color: rgb(14, 118, 192);
+    transition: background 0.5s, transform 0.5s ease-in-out, border 0.2s ease-in;
+}
+
+.booknow:hover {
+    background-color: rgb(49, 93, 124);
+    color: rgb(230, 224, 224);
+    transform: scale(1.1);
+
+    border-color: aliceblue;
+}
+
+.aboutus h1 {
+    font-weight: bold;
+    color: rgb(8, 69, 109);
+    text-align: center;
+}
+.aboutus p {
+    font-size: 16px;
+    color: rgb(8, 69, 109);
+}
+
+.overview {
+    margin-top: 100px;
+    width: 100%;
+
+    background-color: rgb(114, 163, 196);
+}
+
+.overview h2 {
+    color: rgb(8, 69, 109);
+    font-weight: bold;
+}
+.overview h5 {
+    color: rgb(8, 69, 109);
+}
+.txtbox {
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: rgb(147, 179, 204);
+    font-size: 30px;
+    color: aliceblue;
+    transition: 0.4s;
+}
+.txtbox:hover {
+    background-color: rgb(114, 163, 196);
+}
+.txtbox:focus {
+    background-color: rgb(114, 163, 196);
+}
+.txtbox::placeholder {
+    color: rgb(104, 132, 155);
+}
+
+.overview button {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    background-color: rgb(82, 171, 223);
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(8, 69, 109);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.overview button:hover {
+    background-color: rgb(126, 183, 216);
+}
+
+footer h5 {
+    font-family: "Cookie", cursive;
+    color: rgb(8, 69, 109);
+}
+footer {
+    position: relative;
+    left: 0;
+
+    bottom: 0;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+.login label {
+    color: rgb(8, 69, 109);
+    font-size: 20px;
+}
+.login h1 {
+    color: rgb(8, 69, 109);
+}
+
+.login .authbox {
+    padding: 8px;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(147, 179, 204);
+    transition: 0.5s all linear;
+    color: rgb(8, 69, 109);
+}
+
+.login .authbox:hover {
+    background-color: rgb(120, 173, 206);
+}
+.login .authbox:focus {
+    background-color: rgb(114, 163, 196);
+    background-color: aliceblue;
+}
+.login .authbox:placeholder {
+    color: rgb(104, 132, 155);
+}
+
+.login .authbox:disabled {
+    background-color: rgb(136, 148, 151);
+}
+
+.login .authbtn {
+    padding: 10px 30px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: rgb(60, 106, 128);
+    color: aliceblue;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: 1s all ease;
+}
+.login .authbtn:hover {
+    background-color: rgb(81, 143, 172);
+
+    color: rgb(2, 16, 29);
+}
+.login .forgotpass {
+    text-decoration: none;
+    color: aliceblue;
+}
+#btnbars {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: rgb(244, 246, 247);
+    position: absolute;
+    right: 40px;
+    top: 5px;
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        width: 100%;
+    }
+    #btnbars {
+        display: block;
+    }
+    nav {
+        height: 50px;
+    }
+    nav .tabs {
+        display: none;
+    }
+    #img3 {
+        width: 460px;
+        top: 90px;
+        right: 80px;
+    }
+    .booknow {
+        padding: 10px;
+        font-size: 30px;
+    }
+    .banner h2 {
+        font-size: 26px;
+    }
+    .banner h2 span {
+        font-size: 60px;
+    }
+
+    nav .title {
+        z-index: 1;
+        font-size: 40px;
+        left: 20px;
+    }
+
+    nav .subtitle {
+        z-index: 1;
+        top: 40px;
+        left: -15px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        width: 100%;
+    }
+    footer {
+        display: none;
+    }
+
+    #img1 {
+        display: none;
+    }
+    .booknow {
+        padding: 5px;
+        top: 80px;
+        left: 10px;
+        right: unset;
+        font-size: 25px;
+    }
+    .banner h2 {
+        font-size: 20px;
+    }
+    .banner h2 span {
+        font-size: 54px;
+    }
+
+    #img3 {
+        width: 500px;
+        right: 0%;
+        top: 60px;
+        z-index: 0;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    #img3 {
+        width: 480px;
+        right: -20%;
+    }
+    .banner h2 {
+        margin-top: 100px;
+        font-size: 25px;
+        z-index: 1;
+    }
+    .banner h2 span {
+        font-size: 49px;
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+nav .tabs .dropdown ul {
+    background-color: #698269;
+}
+
+nav .tabs .dropdown ul li {
+    margin: unset;
+    display: flex;
+}
+
+nav .tabs .dropdown ul li .dropdown-item {
+    display: flex;
+
+    font-size: 15px;
+}
+
+nav .tabs .dropdown ul li .dropdown-item {
+    font-family: "Poppins", sans-serif;
+}
+nav .tabs .dropdown ul li:hover .dropdown-item {
+    background-color: transparent;
+    color: white;
+}

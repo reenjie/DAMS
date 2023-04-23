@@ -1,0 +1,2 @@
+appointment
+ad_status == 3 || user can set his schedule

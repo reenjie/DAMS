@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gulzar&family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Road+Rage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Tangerine&family=Zen+Kaku+Gothic+New&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: blueviolet;
+}
+.af {
+    font-family: "Roboto", sans-serif;
+}
+.hf {
+    font-family: "Roboto", sans-serif;
+}
+
+.txt {
+    font-size: 14px;
+}
+
+.eventcardheader {
+    /*   border-top-right-radius: 10px;
+    border-top-left-radius: 10px; */
+    background-color: brown;
+    /* text-align: center; */
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    padding-top: 8px;
+}
+.eventcardboy {
+    /*   border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;  */
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.nav1 {
+    height: 25px;
+    width: 100%;
+    background-image: url("/public/assets/img/19742.jpg");
+    background-size: 300px;
+    background-position: right;
+    background-repeat: repeat;
+    line-height: 35px;
+
+    /*   border-bottom: 1px solid grey; */
+}
+.nav2 {
+    background-color: rgb(172, 13, 13);
+    height: 60px;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px;
+}
+.logo {
+    position: relative;
+    display: inline-flex;
+    transform: translateY(-20%);
+    margin-top: 5px;
+}
+.logo img {
+    height: 50px;
+    display: block;
+    margin-top: -5px;
+}
+.logo span {
+    color: rgb(218, 209, 209);
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+.Sidelink {
+    float: right;
+    transform: translateY(-20%);
+}
+.Sidelink a {
+    text-decoration: none;
+    color: rgb(92, 51, 51);
+    /*  background-color: rgb(250, 253, 255); */
+    padding: 5px;
+}
+
+.Sidelink a:hover {
+    color: rgb(165, 25, 25);
+    padding: 5px;
+}
+
+.fs {
+    font-size: 15px;
+}
+.c-img {
+    width: 100%;
+    height: 400px;
+    image-resolution: 300dpi;
+}
+.navs {
+    margin-top: 10px;
+    text-align: center;
+    transform: translateY(-20%);
+}
+.navs a {
+    text-decoration: none;
+    font-family: "Mate SC", serif;
+    padding: 10px;
+    color: rgb(218, 209, 209);
+}
+.navs a:hover {
+    background-color: rgb(201, 10, 20);
+    color: rgb(218, 209, 209);
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+}
+.linespacer {
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.linespacer hr {
+    color: rgb(245, 202, 11);
+}
+#videoconscontroller {
+    background-color: rgba(0, 0, 0, 0.24);
+    border: none;
+    outline: none;
+    height: 400px;
+}
+#videocontroller {
+    background-color: rgba(0, 0, 0, 0.24);
+    border: none;
+    outline: none;
+    height: 400px;
+}
+.announcement_board {
+    background-color: rgba(230, 23, 23, 0.16);
+    border-radius: 5px;
+    padding: 10px;
+}
+.event_contents {
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.announcement_content {
+    padding: 5px;
+    height: 350px;
+
+    overflow-y: scroll;
+}
+#videocontents {
+    height: 370px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.overflow::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.overflow::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.overflow::-webkit-scrollbar-thumb {
+    background: rgb(99, 14, 14);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.overflow::-webkit-scrollbar-thumb:hover {
+    background: rgb(99, 14, 14);
+}
+
+.overflow::-webkit-scrollbar {
+    width: 10px;
+}
+
+.videocard {
+    background: rgba(139, 133, 19, 0.24);
+}
+
+.coordinators h6 {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Gulzar", serif;
+    margin-top: 5px;
+}
+.coordinators img {
+    width: 100%;
+    height: auto;
+}
+
+#btnup {
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.34);
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    padding: 10px 20px;
+    color: rgb(150, 67, 67);
+
+    border-radius: 5px;
+    z-index: 40;
+}
+#btnup i {
+    font-size: 20px;
+}
+
+#btnup:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.searchbar {
+    padding: 10px;
+}
+.searchbar input {
+    padding: 10px 20px 7px;
+    font-size: 18px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: text;
+    background-color: rgb(221, 212, 212);
+    color: rgb(36, 28, 28);
+    font-family: "Gulzar", serif;
+    text-shadow: 23cm;
+}
+.searchbar input:focus {
+    background-color: rgb(213, 223, 228);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+.searchbar button {
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid rgb(125, 137, 189);
+    outline: none;
+    background-color: rgb(125, 137, 189);
+    color: #fff;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: "Mate SC", serif;
+
+    text-align: center;
+}
+.searchbar button:hover {
+    background-color: rgb(140, 153, 207);
+    color: rgb(87, 24, 24);
+}
+.searchbar button:focus {
+    color: rgb(192, 192, 192);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(240, 235, 235);
+}
+footer h6 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+    font-family: "Mate SC", serif;
+    color: rgb(163, 27, 27);
+}
+#Options {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+#Options button {
+    border: none;
+    outline: none;
+    background-color: rgb(235, 107, 107);
+    font-family: "Mate SC", serif;
+    padding: 10px;
+    color: rgb(20, 13, 13);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
