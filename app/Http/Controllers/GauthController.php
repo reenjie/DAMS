@@ -20,8 +20,8 @@ class GauthController extends Controller
         $client = new Google_Client();
         $client->setApplicationName('My Laravel App');
         $client->setAuthConfig(public_path('client_secret.json'));
-       // $client->setRedirectUri('https://patientappointment.hostedcom.online/google/callback');
-       $client->setRedirectUri('http://localhost:8000/google/callback');
+        $client->setRedirectUri('https://patientappointment.hostedcom.online/google/callback');
+     //  $client->setRedirectUri('http://localhost:8000/google/callback');
         $client->addScope(Google_Service_Oauth2::USERINFO_PROFILE);
         $client->addScope(Google_Service_Oauth2::USERINFO_EMAIL);
 
@@ -34,8 +34,8 @@ class GauthController extends Controller
         $client = new Google_Client();
         $client->setApplicationName('My Laravel App');
         $client->setAuthConfig(public_path('client_secret.json'));
-     //   $client->setRedirectUri('https://patientappointment.hostedcom.online/google/callback');
-     $client->setRedirectUri('http://localhost:8000/google/callback');
+        $client->setRedirectUri('https://patientappointment.hostedcom.online/google/callback');
+     //$client->setRedirectUri('http://localhost:8000/google/callback');
         $client->addScope(Google_Service_Oauth2::USERINFO_PROFILE);
         $client->addScope(Google_Service_Oauth2::USERINFO_EMAIL);
 
@@ -71,7 +71,7 @@ class GauthController extends Controller
 
           
               if(Auth::loginUsingId([$reg->id])){
-                return redirect()->route('login');
+                return redirect()->route('home');
               }else{
                 return redirect('/');
               }
