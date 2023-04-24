@@ -323,5 +323,5 @@ Route::get('test', function () {
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/google/login', 'GauthController@redirectToGoogle')->name('google.login');
-    Route::get('/google/callback', 'GAuthController@handleGoogleCallback')->name('google.callback');
+    Route::get('/google/callback', 'GauthController@handleGoogleCallback')->name('google.callback');
 });
