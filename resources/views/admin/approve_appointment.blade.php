@@ -32,7 +32,7 @@ Attach file
 @csrf
 <div class="modal-body">
 
-<input type="file" name="imgfile[]" multiple required accept="image/*" data-id="{{$row->id}}" class="onUpload form-control" style="font-size:14px"/>
+<input type="file" name="imgfile[]" multiple required  data-id="{{$row->id}}" class="onUpload form-control" style="font-size:14px"/>
 <input type="hidden" value="{{$row->id}}" name="apptid">
 </div>
 <div class="modal-footer">
@@ -48,7 +48,7 @@ Attach file
 <div class="p-2">
 
 @foreach ($attachments as $fileitems)
-<a href="{{asset('attachments/').'/'.$fileitems->file}}" target="_blank">
+<a href="{{asset('public/attachments/').'/'.$fileitems->file}}" target="_blank">
 <i class="fas fa-image"></i> {{$fileitems->file}}
 </a>
 <br>

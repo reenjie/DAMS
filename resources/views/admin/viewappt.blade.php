@@ -117,13 +117,15 @@
           <td>
 
             @if($row->status == 0)
+            
+            
             <button data-id="{{$row->id}}" class="btn btn-light btnapprove text-primary btn-sm">Approve <i class="fas fa-check-circle"></i></button>
             <button data-id="{{$row->id}}" class="btn btncancel btn-light text-danger btn-sm">Disapprove <i class="fas fa-times-circle"></i></button>
-
-            @elseif($row->status == 1)
+    
+            @elseif($row->status == 1)  
 
             @include('admin.approve_appointment')
-
+    
             @elseif($row->status == 4)
 
             <button data-id="{{$row->id}}" class="btn btn-light btnfollowup text-primary btn-sm">Conduct Follow Up <i class="fas fa-arrow-right"></i></button>

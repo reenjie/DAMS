@@ -1,3 +1,10 @@
+  @php
+          $history = DB::select('SELECT * FROM `records` where userID = '.Auth::user()->id.' ');
+         
+          @endphp
+          @if(count($history)>=1)
+ <button  class="btn btn-sm btn-light text-primary" onclick="window.location.href='{{route('admin.downloadalldata',['id'=>Auth::user()->id,'apptID'=>$history[0]->appointment])}}' "><i class="fas fa-download"></i> Download Patient Details</button>
+            @endif
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link btn btn-success  active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-panes" type="button" role="tab" aria-controls="home-tab-pane" style="font-size:14px" aria-selected="true">Medical Treatment</button>
@@ -24,15 +31,13 @@
 
         </thead>
         <tbody>
-          @php
-          $history = DB::select('SELECT * FROM `records` where userID = '.Auth::user()->id.' ');
-          @endphp
+         
           @foreach ($history as $apt )
 
           @php
           $appt = DB::select('SELECT * FROM `appointments` where id = '.$apt->appointment.' ');
           @endphp
-
+            
 
           <tr style="font-size: 14px">
             <td>{{date("@h:ma F j,Y",strtotime($apt->created_at))}}</td>

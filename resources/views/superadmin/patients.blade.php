@@ -116,9 +116,18 @@
                                                     Type : 
                                                     <span  style="font-weight: bold;font-size:15px;" class="text-primary mb-2">
                                                     @php
-                                                        $category = DB::select('select * from categories where id = '.$doc->specialization.' ');
+                                                     $specs = unserialize($doc->specialization);
+                                                        $spez = DB::select('select * from categories ');
                                                     @endphp
-                                                    {{$category[0]->name}}
+                                                
+                                                <ul class="list-group list-group-flush">
+
+                                                    @for ($i = 0; $i < count($specs); $i++) @foreach($spez as $sp) @if($sp->id == $specs[$i])
+                                                        <li class="list-group-item text-primary"> {{$sp->name}}</li>
+                                                        @endif
+                                                        @endforeach
+                                                        @endfor
+                                                </ul>
                                                     </span> <br><br>
                                                        Doctor : 
                                                        <span  style="font-weight: bold;font-size:15px;" class="text-primary mb-2">Dr. {{$doc->name}}</span> <br><br>

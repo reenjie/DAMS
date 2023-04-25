@@ -140,7 +140,7 @@ class BookController extends Controller
 
       $schedule = Schedule::findorFail($apptID);
 
-      $adate = $schedule->dateofappt;
+  $adate = $schedule->dateofappt;
       $timestart = $schedule->timestart;
       $timeend = $schedule->timeend;
       $udetails = User::where('id', $userid)->get();
@@ -152,7 +152,7 @@ class BookController extends Controller
          'status' => 1,
       ]);
 
-      return redirect()->route('mail.notify_patient', ['email' => $email, 'name' => $name, 'doa' => $adate, 'timestart' => $timestart, 'timeend' => $timeend, 'tp' => 'approved', 'remarks' => $request->remarks]);
+      return redirect()->route('mail.notify_patient', ['email' => $email, 'name' => $name, 'doa' => $adate, 'timestart' => $timestart, 'timeend' => $timeend, 'tp' => 'approved', 'remarks' => $request->remarks]); 
    }
 
    public function complete_booking(Request $request)

@@ -124,7 +124,7 @@ Attach file
 <div class="p-2">
 
 @foreach ($attachments as $fileitems)
-<a href="{{asset('attachments/').'/'.$fileitems->file}}" target="_blank">
+<a href="{{asset('public/attachments/').'/'.$fileitems->file}}" target="_blank">
   <i class="fas fa-image"></i> {{$fileitems->file}}
 </a>
 <br>

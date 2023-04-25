@@ -56,7 +56,7 @@
                        <div class="p-2">
                         <span style="font-size: 12px;color:rgb(59, 58, 58)">Attached Medical Certificate </span>
                         <br>
-                      <a href="{{asset('attachments/').'/'.$appt->attachedfile}}" target="_blank">
+                      <a href="{{asset('public/attachments/').'/'.$appt->attachedfile}}" target="_blank">
               <i class="fas fa-image"></i> {{$appt->attachedfile}}
               </a>
 

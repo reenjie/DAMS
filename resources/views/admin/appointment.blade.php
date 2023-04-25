@@ -69,8 +69,8 @@
             </thead>
             <tbody>
               @php
-                  //$users = DB::select('select * from users where user_type = "patient" ');
-                  $users = DB::select('select * from users ');
+                  $users = DB::select('select * from users where user_type = "patient" ');
+                 // $users = DB::select('select * from users ');
               @endphp
               @foreach ($users as $key => $item)
               <tr>
@@ -272,7 +272,17 @@
           <div class="btn-group" >
 
             @if($row->status == 0)
+            
+            @php
+              $allcountApprove = DB::select('select COUNT(apptID) as kunta from appointments where apptID ='.$sched->id.' and status = 1');
+              $allappt = DB::select('SELECT * FROM `appointments` where status = 1 and apptID in (select id from schedules where noofpatients > '.$allcountApprove[0]->kunta.' and id = 2 )');
+       
+            @endphp
+            @if(count($allappt)>=1)
             <button data-id="{{$row->id}}" class="btn btn-light btnapprove text-primary btn-sm">Approve <i class="fas fa-check-circle"></i></button>
+            @else 
+            <span class="badge bg-danger">FULL SLOT</span>
+            @endif
             <button  data-id="{{$row->id}}" class="btn btncancel btn-light text-danger btn-sm">Disapprove <i class="fas fa-times-circle"></i></button>
             <button data-id="{{$row->id}}" data-pid="{{$p_id}}" style=" font-weight: bold" class="btnrefer  btn btn-light text-danger btn-sm af">REFER <i class="fas fa-arrow-right"></i></button>
             @endif
