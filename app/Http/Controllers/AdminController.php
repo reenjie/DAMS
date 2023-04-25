@@ -384,12 +384,11 @@ class AdminController extends Controller
     }
     $history = DB::select('SELECT * FROM `records` where userID = ' . $appt->user_id . ' ');
 
-    $ref = DB::select('SELECT u1.name AS fromdoctor_name, u2.name AS todoctor_name , r.created_at as datereferred, r.remarks
+    $ref = DB::select('SELECT u1.name AS fromdoctor_name, u2.name AS todoctor_name,  r.created_at as datereferred, r.remarks
     FROM ref_histories r
     INNER JOIN users u1 ON r.fromdoctor = u1.id
-    INNER JOIN users u2 ON r.todoctor = u2.id;');
+    INNER JOIN users u2 ON r.todoctor = u2.id where r.user_id ='.$appt->user_id);
    
-
 
     $template = new TemplateProcessor($file_path);
     $template->setValue('guardian', $user->proxyName);

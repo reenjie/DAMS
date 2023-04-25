@@ -76,12 +76,25 @@
                                   <option value="all">All</option>
                                 </select>
                               </div>
-                              <div class="col-md-3">
+                              <div class="col-md-6">
+                                 <select name="" class="form-select" id="doc">
+                                  <option value="">Sort By Doctor</option>
+                               
+                                  @php
+                                      $doc = DB::select('SELECT * FROM `users` where user_type ="doctor" ');
+                                  @endphp
                     
+                                  @foreach ($doc as $item)
+                               
+                                  <option value="{{$item->id}}">Dr .{{$item->name}}</option>     
+                          
+                                  @endforeach
+                                  <option value="all">All</option>
+                                </select>
                               </div>
                             </div>
                             <div class="container  table-responsive">
-                                <table class="table table-sm table-bordered mt-4 table-hover" style="font-size:14px">
+                                <table class="table table-sm table-bordered mt-4 table-hover" style="font-size:14px" id="myTable">
                                     <thead>
                                         <tr class="table-success">
                                             <th scope="col">Action</th>
@@ -98,13 +111,16 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($doctorwsched as $row)
-                                         @if(request('id')) 
+                                         @if(request('id') || request('docid')) 
+                                     
                                                  @php
                                          $specs = unserialize($row->specialization);   
                                          @endphp     
-                                         <ul class="list-group list-group-flush">
+                                         @if(request('docid'))
+                                             @if($row->id == request('docid'))
+                                                    <ul class="list-group list-group-flush">
                                            @for ($i = 0; $i < count($specs); $i++) 
-                                           @if(request('id') == $specs[$i])
+                                        
                                               <tr class="table-primary">
                                             <td colspan="9" style="font-weight:bold;text-align:center">Dr. {{$row->name}} Schedules</td>
                                         </tr>
@@ -112,7 +128,99 @@
 
                                         @if($item->doctorid == $row->id )
                                         @php
-                                        $counttotalapt = DB::select('select * from appointments where apptID = '.$item->id.' and status >=1 ');
+                                      
+                                    
+                                         $counttotalapt = DB::select('select * from appointments where apptID = '.$item->id.' and status >=1 ');
+                                        
+                                       
+
+
+                                        @endphp
+                                        <tr>
+                                            <td>
+
+                                                @if( $item->noofpatients <= count($counttotalapt) ) <span class="badge bg-danger">Full Slot</span>
+                                                    @else
+
+                                                    <form action="{{route('home.submit')}}" method="post">
+                                                        @csrf
+                                                        <textarea style="font-size:13px" name="purpose" class="form-control" placeholder="State your purpose *" required id="" cols="5" rows="5"></textarea>
+                                                        <input type="hidden" name="schedid" value="{{$item->id}}">
+                                                        <input type="hidden" name="specialization" value="{{$row->specialization}}">
+                                                        <input type="hidden" name="doctorid" value="{{$row->id}}">
+                                                        <button type="submit" class="btn btn-primary btn-sm  px-5">Book Now <i class="fas fa-arrow-right"></i></button>
+                                                    </form>
+                                                    @endif
+
+
+                                            </td>
+                                            <td>
+                                                {{date('F j,Y',strtotime($item->dateofappt))}}
+                                            </td>
+                                            <td>{{date('h:ia',strtotime($item->timestart))}}</td>
+                                            <td>{{date('h:ia',strtotime($item->timeend))}}</td>
+                                            <td>{{$item->noofpatients}}</td>
+                                            <td>
+
+                                                {{$item->noofpatients - count($counttotalapt )}}
+
+                                            </td>
+                                            <td>
+                                                @php
+                                                $spez = DB::select('SELECT * FROM `categories`');
+                                                $datenow = date('Y-m-d');
+                                                $specs = unserialize($row->specialization);
+                                                @endphp
+
+                                                <ul class="list-group list-group-flush">
+
+                                                    @for ($i = 0; $i < count($specs); $i++) @foreach($spez as $sp) @if($sp->id == $specs[$i])
+                                                        <li class="list-group-item text-primary"> {{$sp->name}}</li>
+                                                        @endif
+                                                        @endforeach
+                                                        @endfor
+                                                </ul>
+
+
+
+                                            </td>
+                                            <td>
+                                                @if($datenow > $item->dateofappt )
+                                                <span class="badge bg-danger">Inactive</span>
+                                                @else
+                                                <span class="badge bg-success">Active</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                {{$item->remarks}}
+
+                                            </td>
+
+                                        </tr>
+
+                                        @endif
+                                        @endforeach
+                                           
+                                           @endfor
+                                         </ul>
+                                             @endif
+                                         
+                                         @endif
+                                         <ul class="list-group list-group-flush">
+                                           @for ($i = 0; $i < count($specs); $i++) 
+                                           @if(request('id') == $specs[$i] )
+                                              <tr class="table-primary">
+                                            <td colspan="9" style="font-weight:bold;text-align:center">Dr. {{$row->name}} Schedules</td>
+                                        </tr>
+                                        @foreach($sched as $item)
+
+                                        @if($item->doctorid == $row->id )
+                                        @php
+                                      
+                                    
+                                         $counttotalapt = DB::select('select * from appointments where apptID = '.$item->id.' and status >=1 ');
+                                        
+                                       
 
 
                                         @endphp
@@ -310,7 +418,7 @@
     @endif
 
     <script>
-    
+   
       $('#spec').change(function(){
     var val = $(this).val();
     if(val == 'all'){
@@ -319,6 +427,17 @@
     }
     window.location.href='?id='+val;
   })
+  
+      $('#doc').change(function(){
+    var val = $(this).val();
+    if(val == 'all'){
+      window.location.href='/Schedules';
+      return;
+    }
+    window.location.href='?docid='+val;
+  })
+  
+  
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {

@@ -275,10 +275,10 @@
             
             @php
               $allcountApprove = DB::select('select COUNT(apptID) as kunta from appointments where apptID ='.$sched->id.' and status = 1');
-              $allappt = DB::select('SELECT * FROM `appointments` where status = 1 and apptID in (select id from schedules where noofpatients > '.$allcountApprove[0]->kunta.' and id = 2 )');
+              $noofpatient = DB::select('select noofpatients from schedules where id = '.$sched->id.' ');
        
             @endphp
-            @if(count($allappt)>=1)
+            @if($noofpatient[0]->noofpatients > $allcountApprove[0]->kunta)
             <button data-id="{{$row->id}}" class="btn btn-light btnapprove text-primary btn-sm">Approve <i class="fas fa-check-circle"></i></button>
             @else 
             <span class="badge bg-danger">FULL SLOT</span>
@@ -293,7 +293,9 @@
        </div>
         </h6>
           @if($row->status == 1)
-            @include(' admin.approve_appointment') @elseif($row->status == 2)
+            @include(' admin.approve_appointment') 
+            
+            @elseif($row->status == 2)
 
                   @elseif($row->status == 3)
 
