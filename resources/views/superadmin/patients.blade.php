@@ -76,13 +76,20 @@
                                           @foreach ($userappt as $ap)
                                             @php
                                         $schedule = DB::select('SELECT * FROM `schedules` where id = '.$ap->apptID.' ');
+                                     
                                       @endphp
-                                           <h6 style="font-size:13px" class="af mb-3 bg-light shadow p-3">
+                                      @if($ap->apptID == 0)
+                                        <span style="color:red">To set Schedule.</span>
+                                        @else 
+                                          <h6 style="font-size:13px" class="af mb-3 bg-light shadow p-3">
                                         <span style="float: right">   Date :  <span style="font-weight: bold" class="text-danger">{{date('F j,Y',strtotime($schedule[0]->dateofappt))}}</span>
                
                                            <br>
                                            Time : <span style="font-weight: bold" class="text-danger">{{date('h:i a',strtotime($schedule[0]->timestart)).' - '.date('h:i a',strtotime($schedule[0]->timeend))}}</span>
-                                       </span>
+                                       </span> 
+                                      @endif
+                                                
+                                                  
                                                <br><br><br>
                                                <ul class="list-group list-group-flush">
                                                    <li class="list-group-item">
