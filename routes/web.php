@@ -58,6 +58,10 @@ Route::get('/Book', function () {
     return view('book', compact('clinic', 'clinics'));
 });
 
+Route::get('/Aboutus',function(){
+    return view('aboutus');
+});
+
 
 Route::get('/agreement', function () {
     return view('Agreement');

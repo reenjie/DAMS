@@ -136,14 +136,18 @@
                                 <button onclick="window.location.href='/Doctors'" class="btnbook">
                                   Doctors
                                 </button>
-
+                                    
+                                    
+                             <button onclick="window.location.href='/Aboutus'" class="btnbook" style="background-color:#FEA1A1">
+                                  About us
+                                </button>
                             
                             </div>
                         
 
                            
                         </div>
-                       
+                     
                     </div>
 
 
